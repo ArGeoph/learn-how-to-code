@@ -26,7 +26,7 @@
     <!-- Main content -->  
     <main>
         <h1>Welcome to <span>Learn how to code!</span><br> Learn latest web technologies and reach your goal to become a web developer</h1>
-        <a class="linkMainPage" href= "<?php echo (isUserAuthenticated() ? "lessons.php" : "login.php"); ?>"> Start learning now</a>
+        <a class="linkMainPage" href= "<?php echo (isUserAuthenticated() ? "loged.php" : "login.php"); ?>"> Start learning now</a>
     </main>
 
     <!-- Footer -->

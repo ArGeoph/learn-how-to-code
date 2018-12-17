@@ -14,9 +14,11 @@
         //iterate through error array to see if there's any errors 
         foreach ($GLOBALS["logErrorMessages"] as $error) {
             if ($error != "") {
-                return;
+                return false;
             }
         }
+
+        return true;
     }
 
     //Check if user is authenticated or not
@@ -28,5 +30,10 @@
         else {
            return false; 
         }    
+    }
+
+    //Function printing current year
+    function printYear() {
+        echo date('Y');
     }
 ?>

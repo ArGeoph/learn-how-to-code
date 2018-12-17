@@ -1,4 +1,8 @@
-<?php  session_start(); ?>
+<?php
+    session_start(); 
+    require "helpers/utilities.php"; 
+    require "helpers/database.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,24 +36,12 @@
                 $pass = checkUserInput($_POST["pass"]);
             }
 
-            isAllFieldsAreFilled();
+            if(isAllFieldsAreFilled()) { //If all fields are filled called function checking if the login and password exist
+                authenticateUser();
+            }
         }   
 
-
-
-        //Check if all fields are entered and there's no errors and call function writing everything to database if it's the case 
-        function isAllFieldsAreFilled() {
-            //iterate through error array to see if there's any errors 
-            foreach ($GLOBALS["logErrorMessages"] as $error) {
-                if ($error != "") {
-                    return;
-                }
-            }
-
-            //if reached this point it means that there's no any errors and we can check if login and password are correct
-            authenticate();
-        }
-     ?>
+    ?>
 
     <!-- HTML content -->
     <!-- Nav menu -->
@@ -79,7 +71,7 @@
     </main>
 
     <footer>
-        <h3>Kirill Golubev &copy;<?php echo date('Y') ?></h3>
+        <h3>Kirill Golubev &copy;<?php printYear(); ?></h3>
     </footer>
 </body>
 </html>

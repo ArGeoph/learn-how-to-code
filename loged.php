@@ -1,21 +1,15 @@
 <?php  
     //=============================================================================//
     //***PHP Code ***/
-    session_start(); 
+    session_start(); //Start session: starts new session if it hasn't been created recently, or starts the session that was created on one of the previous pages
+    require "helpers/utilities.php"; //Get php library checking if user is authenticated or not and change Start learning now button link based on returned value
 
-    //Get learning content from database
-    function getLearningContent() {
-        $dbConnection = connectToDB();
-        mysqli_select_db($dbConnection, "bookmarks");
-
-        //get all bookmarks for the this particular user
-        $requestBookmarks = "SELECT * FROM bookmarks WHERE userID = \""  .$_SESSION["userID"] . "\"";
-        $requestResult = mysqli_query($dbConnection, $requestBookmarks);
-        mysqli_close($dbConnection);
-
-        return $requestResult;
+    //Check if user authenticated
+    if(!isUserAuthenticated()) {
+        header("Location: login.php");
+        exit();
     }
-   
+    
     //Check if any form button was pressed
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (isset($_POST["newUrlName"]) && isset($_POST["newUrl"])) {
@@ -56,6 +50,7 @@
     <nav>
     <p class="logo">Learn how to code</p>
         <div class="navButtons">
+            <a href="index.php">Main</a>
             <a href="logout.php">Logout</a>
         </div>
     </nav>
