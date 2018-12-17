@@ -1,0 +1,300 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: "Indie Flower";
+    src: url("fonts/IndieFlower.ttf");
+}
+
+
+body {
+    font-family: "Roboto"; 
+    margin: 0 auto;
+    background: url("geometry-1023846_1920.jpg") no-repeat fixed center;
+    background-size: cover;
+}
+/*Header style*/
+header {
+    font-family: "Indie Flower"; 
+    text-align: center;
+    font-size: 2.8em;
+    color: rgb(255, 205, 130);
+    font-weight: bold;   
+}
+header > h2 {
+    margin: 50px auto;
+}
+/*Nav menu style */
+nav {    
+    width: 91%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.menuButton {
+    border-radius: 7px;
+    opacity: 0.9;
+    font-size: 1.65em;
+    width: 350px;
+    height: 60px;
+    margin: 0;
+    font-weight: bold;
+    color: rgb(51, 80, 248);
+    border-bottom: 3px solid  rgb(46, 0, 253);
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    background-color: rgb(241, 226, 203);
+}
+.menuButton:hover {
+    background-color: rgb(240, 197, 134);
+} 
+.buttonActive {
+    height: 65px;
+    background-color: rgb(250, 183, 83);
+    border-left: 4px solid  rgb(46, 0, 253);
+    border-right: 4px solid  rgb(46, 0, 253);
+    box-shadow: -4px 4px 18px rgb(106, 119, 238);
+}
+/** Content style**/
+section {
+    display: flex;
+    justify-content: center    
+}
+#output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    position: absolute;
+    background-color: rgba(252, 228, 228, 0.4);
+    width: 90%;
+    height: 85%;
+    min-height: 1000px;
+}
+option {
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    width: 95px;
+    height: 20px;
+}
+select {
+    width: 100px;
+    height: 35px; 
+    text-align: center;
+}
+option:focus, .userInput:focus {
+    border: 2px solid blue;
+    box-shadow: -2px 2px 4px blue;
+}
+
+select:hover, .userInput:hover {
+    border: 2px solid rgb(189, 243, 157);
+    background-color: rgb(215, 233, 211);
+}
+form {
+    text-align: center;
+}
+.userInput {
+    border-radius: 7px;
+    margin: 12px 10px;
+    width: 100px;
+    height: 25px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+.container {  
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    min-height: 600px;
+    background-color: rgba(212, 209, 209, 0.7);
+    border-radius: 7px;
+    border: 3px solid rgb(117, 117, 241);
+    box-shadow: -4px 4px 18px rgb(106, 119, 238);
+    flex-grow: 2;
+}
+.container ul {
+    font-size: 1.5em;
+}
+.container ul li {
+    margin-top: 25px;
+}
+.container p {
+    padding: 10px 10px;
+    border: 3px solid palevioletred;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-size: 1.3em;
+    line-height: 40px;
+    letter-spacing: 1px;
+}
+.container > h3 {
+    margin: 55px 0 10px 0;
+    font-size: 1.7em;   
+
+}
+form h3 {
+    margin: 0px 0px;
+    padding: 0px 0px;
+    text-align: center;
+    font-size: 1.4em;  
+    color: blue;  
+}
+.container > h2 {
+    text-shadow: 4px 4px 8px blue;
+    margin: 85px 0 60px 0;
+    font-size: 1.9em;    
+    text-align: center;
+}
+label {
+    padding: 0px 10px;
+    color: blue;
+    font-size: 1.3em;
+}
+
+.date {
+    margin: 40px 30px;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+.description {
+    margin: 60px 45px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+p.description > i {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.disabled {
+    color: black;
+}
+#mortgage p, #currency p {
+    text-align: right;
+}
+
+.resetButton {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    opacity: 0.9;
+    font-size: 20px;
+    height: 45px;
+    width: 154px;
+    margin: 35px 2px;
+    font-weight: bold;
+    padding: 5px 5px;
+    background-color: rgba(99, 48, 240, 0.4);
+}
+
+.resetButton:hover {
+    box-shadow: -5px 5px 12px rgb(106, 119, 238);
+    background-color: rgba(99, 48, 240, 0.8);
+}
+
+/** Footer **/
+footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 4px solid rgb(46, 0, 253);
+    margin: 0;
+    padding: 0;
+    top: 1000px;
+    width: 100%;
+    padding: 30px 0px;
+    background-color: black;
+    color: rgb(255, 205, 130);
+    font-family: "Indie Flower"; 
+    font-size: 2.3em;
+}
+
+/*Adapt screeen to various screen sizes 
+=================================================*/
+@media screen and (max-width: 1400px) {
+    nav {
+        width: 100%;
+    }
+    .menuButton {
+        font-size: 1.5em;
+
+    }
+    .buttonActive {
+        height: 65px;
+        background-color: rgb(250, 183, 83);
+        border-left: 4px solid  rgb(46, 0, 253);
+        border-right: 4px solid  rgb(46, 0, 253);
+        box-shadow: -4px 4px 18px rgb(106, 119, 238);
+    }
+    header {
+        font-size: 2.4em;
+    }
+    footer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 4px solid rgb(46, 0, 253);
+        margin: 0;
+        padding: 0;
+        top: 1000px;
+        width: 100%;
+        padding: 30px 0px;
+        background-color: black;
+        color: rgb(255, 205, 130);
+        font-family: "Indie Flower"; 
+        font-size: 2.1em;
+    }
+}
+@media screen and (max-width: 800px) {
+    nav {
+        width: 100%;
+
+    }
+    .menuButton {
+        width: 100%;
+        font-size: 1.4em;
+    }
+    .buttonActive {
+        height: 65px;
+    }
+    header {
+        font-size: 1.8em;
+    }
+    footer { 
+        font-size: 1.8em;
+    }
+    .container > h3 {
+        font-size: 1.5em;     
+    }
+    form h3 {
+        font-size: 1.2em;  
+    }
+    .container > h2 {
+        margin: 85px 0 60px 0;
+        font-size: 1.5em;    
+    }
+    label {
+        font-size: 1.2em;
+    }
+}
