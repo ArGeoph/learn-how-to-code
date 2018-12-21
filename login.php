@@ -48,8 +48,8 @@
     <nav>
     <p class="logo">Learn how to code</p>
         <div class="navButtons">
-            <a href="index.php" >Main</a>
-            <a href="register.php">Register</a>
+            <a href="index.php"><button>Main</button></a>
+            <a href="register.php"><button>Register</button></a>
         </div>
     </nav>
         

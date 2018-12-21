@@ -120,8 +120,8 @@
     <nav>
     <p class="logo">Learn how to code</p>
         <div class="navButtons">
-            <a href="index.php" >Main</a>
-            <a href="login.php">Login</a>
+            <a href="index.php"><button>Main</button></a>
+            <a href="login.php"><button>Login</button></a>
         </div>
     </nav>
         

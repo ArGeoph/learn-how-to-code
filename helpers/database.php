@@ -2,19 +2,6 @@
     //=============================================================================//
     //***PHP Code ***/
 
-    //Get 10 most popular bookmarks from database
-    // $tenMostPopularBookmars;
-
-    // function getBookmarks() {
-    //     $dbConnection = connectToDB();
-
-    //     //get all bookmarks for the this particular user
-    //     $requestBookmarks = "SELECT name, url, COUNT(url) AS number_of_entries FROM bookmarks GROUP BY url ORDER BY number_of_entries DESC LIMIT 10";
-    //     $GLOBALS["tenMostPopularBookmars"] = mysqli_query($dbConnection, $requestBookmarks);
-
-    //     mysqli_close($dbConnection);
-    // }
-
     //Function checking if user entered correct user and password on the login page
     function authenticateUser() {
         //get database connection handler 
@@ -107,17 +94,63 @@
     }
 
     //Get learning content from database
-    function getLearningContent() {
+    function getLearningContent($lessonID) {
+        $leariningContent = "";
         $dbConnection = connectToDB();
-        mysqli_select_db($dbConnection, "bookmarks");
+
 
         //get all bookmarks for the this particular user
-        $requestBookmarks = "SELECT * FROM bookmarks WHERE userID = \""  .$_SESSION["userID"] . "\"";
-        $requestResult = mysqli_query($dbConnection, $requestBookmarks);
+        $requestLesson = "SELECT chapterContent FROM Lessons WHERE lessonID = \"$lessonID\"";
+        $requestResult = mysqli_query($dbConnection, $requestLesson);
+
+        while($row = mysqli_fetch_assoc($requestResult)) {
+            $leariningContent = $leariningContent . $row["chapterContent"];
+        }
+
+        mysqli_close($dbConnection);
+        return $leariningContent;
+    }
+
+    //Get number of lessons from database and their id numbers
+    function getNumberOfLessons() {
+        $dbConnection = connectToDB();
+        
+        $getNumberOfLessons = "SELECT DISTINCT lessonID FROM Lessons";
+        $requestResult = mysqli_query($dbConnection, $getNumberOfLessons);
         mysqli_close($dbConnection);
 
         return $requestResult;
     }
+
+    //Get quiz content from database, results will be grouped by lesson ID
+    function getQuizzesContent ($lessonID) {
+        $quizContent = "";
+        $dbConnection = connectToDB();
+
+        //get all bookmarks for the this particular user
+        $requestQuiz = "SELECT quizContent FROM Quizzes WHERE quizID 
+            IN (SELECT quizID FROM Educational_content WHERE lessonID = \"$lessonID\")";
+        $requestResult = mysqli_query($dbConnection, $requestQuiz);
+
+        while($row = mysqli_fetch_assoc($requestResult)) {
+            $quizContent = $quizContent . $row["quizContent"];
+        }
+
+        // echo $quizContent;
+        mysqli_close($dbConnection);
+        return $quizContent;
+    }
+
+    //Get number of lessons from database and their id numbers
+    function getNumberOfQuizzes() {
+        $dbConnection = connectToDB();
+        
+        $getNumberOfQuizzes = "SELECT DISTINCT lessonID FROM Educational_content";
+        $requestResult = mysqli_query($dbConnection, $getNumberOfQuizzes);
+        mysqli_close($dbConnection);
+
+        return $requestResult;
+    }    
 
     //Function connecting to database and returning database handler
     function connectToDB() {
@@ -129,7 +162,6 @@
         }
         else {
             mysqli_select_db($dbConnection, "learnHowToCode"); //Select requrired database
-            echo "Success";
         }
         return $dbConnection;
     }  

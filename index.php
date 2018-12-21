@@ -18,8 +18,15 @@
     <nav>
         <p class="logo">Learn how to code</p>
         <div class="navButtons">
-            <a href="login.php">Login</a>
-            <a href="register.php">Register</a>
+            <?php 
+                if (isUserAuthenticated()) {//Show different nav menu if user logged in and if they aren't 
+                    echo "<a href=\"logout.php\"><button>Logout</button></a>";
+                }
+                else {
+                    echo "<a href=\"login.php\"><button>Login</button></a><a href=\"register.php\"><button>Register</button></a>";
+                }
+            ?>
+
         </div>
     </nav>
 

@@ -47,17 +47,47 @@ nav {
 .navButtons {
     margin-right: 80px;   
 }
-.navButtons a {
-    size: 200px;
+.navButtons button, .dropDownTitle {
+    height: 60px; 
+    width: 100px;
     font-size: 1.6em;
     text-decoration: none;
     margin: 0px 35px;
     color: rgba(18, 115, 243, 0.8);
+    background-color: transparent;
+    border: none;
     letter-spacing: 1.1px;
     font-weight: bold;
 }
-.navButtons a:hover, .logo:hover {
-    color: rgba(0, 110, 255, 1.0);
+.navButtons button:hover, .dropDownTitle:hover, .logo:hover {
+    color: rgb(0, 110, 255);
+}
+.dropdownMenu {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdownItems {
+    z-index: 1;
+    top: 60px;
+    display: none;
+    position: absolute;
+    background-color: rgba(13, 14, 14, 0.7);
+}
+  
+.dropdownItems button {
+    width: 210px;
+    color: rgba(18, 115, 243, 0.8);
+    padding: 0px 0px;
+    margin: 0px 0px;
+    text-decoration: none;
+    display: block;
+}
+.dropdownMenu:hover .dropdownItems {
+    display: block;
+} 
+.dropdownItems button:hover {
+    background-color: rgb(248, 206, 206);
 }
 
 /*Main page
@@ -101,9 +131,9 @@ main span {
 }
 main h3 {
     font-size: 3em;
-    margin: 0px 0px;
+    margin: 0px 80px;
     padding-top: 90px;
-    color: rgb(109, 121, 207);
+    color: rgb(107, 123, 243);
     text-align: center;
 }
 main ol{
