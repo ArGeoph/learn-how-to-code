@@ -24,9 +24,11 @@
             $content = parseEML(getLearningContent($_POST["lesson"]));//Parse and render lesson content
         }   
 
-        if(isset($_POST["quiz"])) {
-            $content = parseEML(getQuizzesContent($_POST["quiz"]));
-        }
+        //*To be implemented!!!
+        // if(isset($_POST["quiz"])) {
+        //     $content = parseEML(getQuizzesContent($_POST["quiz"]));
+        // }
+        //*To be implemented!!!
     }    
     //=============================================================================//
     //***PHP Code Ends***/   
